@@ -25,7 +25,7 @@ public class Meeting implements Happenings {
 
     public void setDate(String date) {
         try {
-        this.date = new SimpleDateFormat("yyyy-MM-dd-HH-mm").parse(date);
+        this.date = new SimpleDateFormat("yyyy-MM-dd HH:mm").parse(date);
         } catch (ParseException r) {
             System.out.println("ERROR - ParseException");
         }

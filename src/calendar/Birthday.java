@@ -25,8 +25,8 @@ public class Birthday implements Happenings {
 
     public void setDate(String date) {
         try {
-            date = "2013-" + date + "-20-00";
-            this.date = new SimpleDateFormat("yyyy-MM-dd-HH-mm").parse(date);
+            date = "2013-" + date + " 20:00";
+            this.date = new SimpleDateFormat("yyyy-MM-dd HH:mm").parse(date);
         } catch (ParseException r) {
             System.out.println("ERROR - ParseException");
         }

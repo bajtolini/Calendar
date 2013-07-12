@@ -59,7 +59,7 @@ public class Calendar {
             System.out.println("2.Show precize month,"); //dziala
             System.out.println("3.Show how many days left to the next events,"); //dziala
             System.out.println("4.Add event,"); //dziala
-            System.out.println("5.Erase event,"); //niedziala
+            System.out.println("5.Erase event,"); //dziala
             answear = scanner.nextInt();
             //rozpatrzenie odpowiedzi uzytkownika
             if (answear == 1) {
@@ -93,13 +93,13 @@ public class Calendar {
                         date = dscanner.nextLine();
                         System.out.println("Write the description of the Birthday (whose birthday is it, etc.)");
                         Scanner cscanner = new Scanner(System.in);
-                        String content = "2013-" + date + "-20-00 - birthday - " + cscanner.nextLine();
+                        String content = "2013-" + date + " 20:00 - birthday - " + cscanner.nextLine();
                         meetingSet.add(new Birthday());
                         int index = meetingSet.size() - 1;
                         meetingSet.get(index).setDate(date);
                         meetingSet.get(index).setDescription(content);
                     } else if (event.equals("event")) {
-                        System.out.println("Type in date at which you would like to add event(yyyy-mm-dd-hh-MM):");
+                        System.out.println("Type in date at which you would like to add event(yyyy-mm-dd hh:MM):");
                         String date;
                         Scanner dscanner = new Scanner(System.in);
                         date = dscanner.nextLine();
@@ -128,7 +128,7 @@ public class Calendar {
                 loop = "N";
             }
             if (loop.equals("Y")) {
-                SimpleDateFormat dateformatEvent = new SimpleDateFormat("yyyy-MM-dd-HH-mm");
+                SimpleDateFormat dateformatEvent = new SimpleDateFormat("yyyy-MM-dd HH:mm");
                 SimpleDateFormat dateformatBirthday = new SimpleDateFormat("MM-dd");
                 File writing = new File("out.txt");
                 // tworzy plik jezeli nie istnieje i zapisuje wszystko z listy

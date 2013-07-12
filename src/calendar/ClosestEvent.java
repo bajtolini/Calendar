@@ -32,7 +32,7 @@ public class ClosestEvent {
                     ddifference = tday - day;
                 }
                 int mdifference = (cal.get(java.util.Calendar.MONTH) + 1) - tmonth;
-                System.out.println(meetingSet.get(i).getDescription() + " month left:" + mdifference + " days left:" + ddifference);
+                System.out.println(meetingSet.get(i).getDescription() + "|| month left:" + mdifference + "|| days left:" + ddifference);
             } else if (tmonth - 1 > cal.get(java.util.Calendar.MONTH)) {
                 int ddifference;
                 if (day > tday) {
@@ -43,7 +43,7 @@ public class ClosestEvent {
                 int mdifference = (12 - tmonth) + cal.get(java.util.Calendar.MONTH) + 1;
                 int ydifference = cal.get(java.util.Calendar.YEAR) - 2013;
                 if (ydifference != 0) {
-                    System.out.println(meetingSet.get(i).getDescription() + " month left:" + mdifference + " days left:" + ddifference);
+                    System.out.println(meetingSet.get(i).getDescription() + "|| month left:" + mdifference + "|| days left:" + ddifference);
                 }
             } else {
                 int ddifference;
