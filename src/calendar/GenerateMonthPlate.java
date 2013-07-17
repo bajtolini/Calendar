@@ -1,7 +1,5 @@
 package calendar;
 
-import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.List;
 
 public class GenerateMonthPlate {
@@ -34,20 +32,6 @@ public class GenerateMonthPlate {
         }
     }
 
-    public void generateSign(String value, int day) {
-        //funkcja nie uzywana przy listach
-        if (value == null) {
-            System.out.print("  ");
-        } else if (value.contains("*"/*przed listami bylo tutaj "event"*/)) {
-            System.out.print("* ");
-        } else if (value.contains("^"/*przed listami bylo tutaj "birthday"*/)) {
-            System.out.print("^ ");
-        }
-        if (day < 10) {
-            System.out.print(" ");
-        }
-    }
-
     public void generateDescription(List<Happenings> meetingSet, int month) {
         for (int i = 0; i < meetingSet.size(); i++) {
             java.util.Calendar cal = java.util.Calendar.getInstance();
@@ -55,24 +39,10 @@ public class GenerateMonthPlate {
             int eventsMonth = cal.get(cal.MONTH);
             int eventsDay = cal.get(cal.DAY_OF_MONTH);
             for (int j = 1; j < 32; j++) {
-                //wyciagnac z date-a miesiac i porownac liczby!!!!
                 if ((eventsMonth == month - 1) && (eventsDay == j)) {
                     System.out.println(meetingSet.get(i).getDescription());
                 }
             }
         }
-        /*pierwsza wersja w ktorej nie bylo listy 
-         * for (int i = 0; i < month.length; i++) {
-         *     try {
-         *     if (month[i].contains("event")) {
-         *         System.out.println(month[i]);
-         *     } else if (month[i].contains("birthday")) {
-         *         System.out.println(month[i]);
-         *     }
-         *     } catch (NullPointerException y) {
-         *     }
-         * }
-         * System.out.println();
-         */
     }
 }

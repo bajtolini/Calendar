@@ -56,34 +56,5 @@ public class ClosestEvent {
                 System.out.println(meetingSet.get(i).getDescription() + "|| month left:" + mdifference + "|| days left:" + ddifference);
             }
         }
-        /*
-         Date now = new Date();
-         SimpleDateFormat format = new SimpleDateFormat("MM-dd");
-         String date = format.format(now);
-         Scanner reading = new Scanner(System.in);
-         int x = 0, y = 0;
-         while (x == 0 && y == 0) {
-         Pattern p = Pattern.compile("(\\d+{0,1})(\\-)(\\d+{0,1})");
-         Matcher m = p.matcher(date);
-         if (m.find()) {
-         x = Integer.parseInt(m.group(1));
-         y = Integer.parseInt(m.group(3));
-         }
-         }
-         Search count = new Search();
-         int result = count.generate(calendar, y, x, false);
-         if (result == 666) {
-         System.out.println("The next event/birthday is TODAY!");
-         } else if ((result > 0) && (result != 666)) {
-         System.out.println("The next event/birthday will be in: " + result);
-         } else {
-         result = count.generate(calendar, y, x, true);
-         if (result > 0) {
-         System.out.println("The next event/birthday will be in: " + result);
-         } else if (result == 0) {
-         System.out.println("There aren't any events nor birthday in your calendar");
-         }
-         }
-         */
     }
 }

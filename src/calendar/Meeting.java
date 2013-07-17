@@ -29,25 +29,8 @@ public class Meeting implements Happenings {
         } catch (ParseException r) {
             System.out.println("ERROR - ParseException");
         }
-        /*
-        Calendar cal = new GregorianCalendar();        
-        Pattern p = Pattern.compile("(\\d+{0,1})([\\-\\:\\ \\,\\.])(\\d+{0,1})([\\-\\:\\ \\,\\.])(\\d+{0,1})([\\-\\:\\ \\,\\.])(\\d+{0,1})([\\-\\:\\ \\,\\.])(\\d+{0,1})");
-        Matcher m = p.matcher(date);
-        if (m.find()) {
-            int year = Integer.parseInt(m.group(1));
-            int month = Integer.parseInt(m.group(3));
-            int day = Integer.parseInt(m.group(5));
-            int hourOfDay = Integer.parseInt(m.group(7));
-            int minute = Integer.parseInt(m.group(9));
-            cal.set(year, month, day, hourOfDay, minute);
-            this.date = cal.getTime();
-        }
-        */
     }
 
-//    public void setDate(Date date) {
-//        this.date = date;
-//    }
     @Override
     public int hashCode() {
         int hash = 7;
@@ -58,21 +41,6 @@ public class Meeting implements Happenings {
 
     @Override
     public boolean equals(Object obj) {
-        /*
-         if (obj == null) {
-         return false;
-         }
-         if (getClass() != obj.getClass()) {
-         return false;
-         }
-         final Meeting other = (Meeting) obj;
-         if (!Objects.equals(this.description, other.description)) {
-         return false;
-         }
-         if (!Objects.equals(this.date, other.date)) {
-         return false;
-         }
-         */
         return true;
     }
 

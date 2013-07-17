@@ -13,7 +13,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-//duopaddupadupad
+
 public class Calendar {
 
     public static void main(String[] args) throws IOException {
@@ -23,11 +23,6 @@ public class Calendar {
         //pytania do petli
         String loop = "N";
         Scanner sreading = new Scanner(System.in);
-        //generowanie tablicy do kalendarza (teraz juz nie potrzebna)
-        /*String[][] calendar = new String[12][];
-        * GenerateYear year = new GenerateYear();
-        * calendar = year.generate(); */
-        //deklaracja zmiennej do pytan z menu
         Scanner scanner = new Scanner(System.in);
         int answear = 20;
         //odczyt z pliku (mozna pozniej dodac do klasy
@@ -53,11 +48,11 @@ public class Calendar {
         //rozpoczecie glownej czesci programu menu
         while (loop.equals("N")) {
             System.out.println("Write number of the operation which You want to execute:");
-            System.out.println("1.Show entire calendar,"); //dziala
-            System.out.println("2.Show precize month,"); //dziala
-            System.out.println("3.Show how many days left to the next events,"); //dziala
-            System.out.println("4.Add event,"); //dziala
-            System.out.println("5.Erase event,"); //dziala
+            System.out.println("1.Show entire calendar,"); 
+            System.out.println("2.Show precize month,"); 
+            System.out.println("3.Show how many days left to the next events,"); 
+            System.out.println("4.Add event,"); 
+            System.out.println("5.Erase event,"); 
             answear = scanner.nextInt();
             //rozpatrzenie odpowiedzi uzytkownika
             if (answear == 1) {
@@ -74,10 +69,6 @@ public class Calendar {
                 ClosestEvent closest = new ClosestEvent();
                 closest.generate(meetingSet);
             } else if (answear == 4) {
-                /* wczesniejsza wersja (teraz jest dodawanie do listy)
-                 * Event2 add = new Event2();
-                 * add.generate(calendar);
-                 */
                 String event = "";
                 while (!event.contains("birthday") && !event.contains("event")) {
                     System.out.println("Type in what type of event you would like to add (birthday/event):");

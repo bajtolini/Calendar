@@ -81,25 +81,4 @@ public class Show {
             System.out.println();
         }
     }
-
-    /* pierwsza wersja przed dodaniem list
-     * GenerateMonthPlate m = new GenerateMonthPlate();
-     * for (int i = 0; i < 12; i++) {
-     *     m.generatePlate(i + 1);
-     *     for (int j = 0; j < year[i].length; j++) {
-     *         if ((j + 1) % 7 == 0) {
-     *             System.out.print(j + 1);
-     *             m.generateSign(year[i][j], j + 1);
-     *             System.out.println();
-     *         } else {
-     *             System.out.print(j + 1);
-     *             m.generateSign(year[i][j], j + 1);
-     *         }
-     *         if (j + 1 == year[i].length) {
-     *             System.out.println();
-     *         }
-     *     }
-     *     m.generateDescription(MeetingSet, i + 1);
-     * }
-     */
 }

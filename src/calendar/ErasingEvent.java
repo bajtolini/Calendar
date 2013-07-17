@@ -36,20 +36,5 @@ public class ErasingEvent {
                 }
             }
         }
-        /*
-         int x = 0, y = 0;
-         while (x == 0 && y == 0) {
-         System.out.println("At what date do you want to erase event? (dd-mm)");
-         Scanner reading = new Scanner(System.in);
-         Pattern p = Pattern.compile("(\\d+{0,1})(\\-)(\\d+{0,1})");
-         String date = reading.nextLine();
-         Matcher m = p.matcher(date);
-         if (m.find()) {
-         x = Integer.parseInt(m.group(1));
-         y = Integer.parseInt(m.group(3));
-         }
-         }
-         calendar[y - 1][x - 1] = null;
-         */
     }
 }
