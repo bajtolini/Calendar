@@ -5,7 +5,7 @@ import java.util.Calendar;
 
 public class Show {
 
-    public void generate(String[][] year, List<Happenings> meetingSet) {
+    public void generate(List<Happenings> meetingSet) {
         int x = 0;
         int day;
         int month;
@@ -20,7 +20,15 @@ public class Show {
         GenerateMonthPlate m = new GenerateMonthPlate();
         for (int i = 0; i < 12; i++) {
             m.generatePlate(i + 1);
-            for (int j = 0; j < year[i].length; j++) {
+            int monthlenght = 0;
+            if ((i == 0) || (i == 2) || (i == 4) || (i == 6) || (i == 7) || (i == 9) || (i == 11)) {
+                monthlenght = 31;
+            } else if ((i == 3) || (i == 5) || (i == 8) || (i == 10)) {
+                monthlenght = 30;
+            } else if (i == 1) {
+                monthlenght = 28;
+            }
+            for (int j = 0; j < monthlenght; j++) {
                 if ((j + 1) % 7 == 0) {
                     System.out.print(j + 1);
                     if ((i == month) && (j + 1 == day)) {
@@ -65,7 +73,7 @@ public class Show {
                         }
                     }
                 }
-                if (j + 1 == year[i].length) {
+                if (j + 1 == monthlenght) {
                     System.out.println();
                     m.generateDescription(meetingSet, i + 1);
                 }

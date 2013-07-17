@@ -17,16 +17,16 @@ import java.util.List;
 public class Calendar {
 
     public static void main(String[] args) throws IOException {
-        //przerobione zostaly tylko pozycje 4 z menu, pozycja 1 (dodac wypisywanie znakow w kalendarzu przy uzyciu listy)
+        //5 zmiana - usuniecie tablicy dwuwymiarowej 
         //deklarowanie listy obiektow (meetingow)
         List<Happenings> meetingSet = new ArrayList<>();
         //pytania do petli
         String loop = "N";
         Scanner sreading = new Scanner(System.in);
-        //generowanie kalendarza
-        String[][] calendar = new String[12][];
-        GenerateYear year = new GenerateYear();
-        calendar = year.generate();
+        //generowanie tablicy do kalendarza (teraz juz nie potrzebna)
+        /*String[][] calendar = new String[12][];
+        * GenerateYear year = new GenerateYear();
+        * calendar = year.generate(); */
         //deklaracja zmiennej do pytan z menu
         Scanner scanner = new Scanner(System.in);
         int answear = 20;
@@ -62,14 +62,14 @@ public class Calendar {
             //rozpatrzenie odpowiedzi uzytkownika
             if (answear == 1) {
                 Show show = new Show();
-                show.generate(calendar, meetingSet);
+                show.generate(meetingSet);
             } else if (answear == 2) {
                 ShowMonth show = new ShowMonth();
                 int sanswear;
                 Scanner tscanner = new Scanner(System.in);
                 System.out.println("Which month would You like to see?");
                 sanswear = tscanner.nextInt();
-                show.generate(calendar, sanswear, meetingSet);
+                show.generate(sanswear, meetingSet);
             } else if (answear == 3) {
                 ClosestEvent closest = new ClosestEvent();
                 closest.generate(meetingSet);
